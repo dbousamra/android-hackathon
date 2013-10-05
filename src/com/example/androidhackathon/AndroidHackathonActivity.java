@@ -12,6 +12,6 @@ public class AndroidHackathonActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        this.map = ((MapFragment) getFragmentManager().findFragmentById(com.example.androidhackathon.R.id.map)).getMap();
+        this.map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
     }
 }
