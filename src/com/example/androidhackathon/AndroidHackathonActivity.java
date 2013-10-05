@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.example.androidhackathon.R;
+import com.example.androidhackathon.directions.DirectionsTask;
 
 public class AndroidHackathonActivity extends Activity {
     private GoogleMap mMap;
@@ -16,6 +17,7 @@ public class AndroidHackathonActivity extends Activity {
         setContentView(R.layout.main);
         mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         mLocation = new HackathonLocation(this, mMap);
+        new DirectionsTask(mMap).execute();
     }
 
     @Override
@@ -29,4 +31,5 @@ public class AndroidHackathonActivity extends Activity {
         mLocation.disconnect();
         super.onStop();
     }
+
 }
