@@ -57,6 +57,7 @@ public class PhotoStore {
 
     private static void addPhotosToList(Cursor cursor, List<Photo> result) {
         if (cursor.moveToFirst()) {
+
             final int dataColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             final int latColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.LATITUDE);
             final int longColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.LONGITUDE);
