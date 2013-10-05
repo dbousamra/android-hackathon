@@ -1,6 +1,7 @@
 package com.example.androidhackathon;
 
 import android.content.Context;
+import android.util.Log;
 import com.example.androidhackathon.photos.Photo;
 import com.example.androidhackathon.photos.PhotoStore;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,6 +19,7 @@ public class PhotoMarkerCluster {
         this.context = context;
         this.mLocation = mLocation;
         this.photos = PhotoStore.getCameraImages(context);
+        Log.e("PhotoMarkerCluster", "finished");
     }
 
     public void addCluster() {
