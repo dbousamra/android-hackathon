@@ -1,3 +1,6 @@
+out/*
+gen/*
 local.properties
 .idea/
 bin/
+project.properties
