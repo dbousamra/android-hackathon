@@ -3,7 +3,7 @@
           package="com.example.androidhackathon"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="18"/>
+    <uses-sdk android:minSdkVersion="16"/>
 
     <permission
         android:name="com.example.androidhackathon.permission.MAPS_RECEIVE"
