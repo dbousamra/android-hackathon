@@ -1,34 +1,22 @@
 package com.example.androidhackathon.photos;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Photo {
 
     private final String path;
-    private final String latitude;
-    private final String longitude;
+    private final LatLng location;
 
-    public Photo(String path, String latitude, String longitude) {
+    public Photo(String path, LatLng location) {
         this.path = path;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.location = location;
     }
 
     public String getPath() {
         return path;
     }
 
-    public String getLatitude() {
-        return latitude;
-    }
-    public String getLongitude() {
-        return longitude;
-    }
-
-    @Override
-    public String toString() {
-        return "Photo{" +
-                "path='" + path + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
-                '}';
+    public LatLng getLocation() {
+        return location;
     }
 }

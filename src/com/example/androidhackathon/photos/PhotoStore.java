@@ -5,6 +5,7 @@ import android.content.CursorLoader;
 import android.database.Cursor;
 import android.os.Environment;
 import android.provider.MediaStore;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +35,19 @@ public class PhotoStore {
             final int latColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.LATITUDE);
             final int longColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.LONGITUDE);
             do {
-                Photo photo = new Photo(cursor.getString(dataColumn), cursor.getString(latColumn), cursor.getString(longColumn));
-                result.add(photo);
+                if (photoHasLocation(cursor, latColumn, longColumn)) {
+                    LatLng location = new LatLng(Double.parseDouble(cursor.getString(latColumn)), Double.parseDouble(cursor.getString(longColumn)));
+                    Photo photo = new Photo(cursor.getString(dataColumn), location);
+                    result.add(photo);
+                }
             } while (cursor.moveToNext());
         }
         cursor.close();
         return result;
+    }
+
+    private static boolean photoHasLocation(Cursor cursor, int latColumn, int longColumn) {
+        return cursor.getString(latColumn) != null && cursor.getString(longColumn) != null;
     }
 
     private static String getBucketId(String path) {

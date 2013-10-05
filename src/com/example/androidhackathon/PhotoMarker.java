@@ -6,8 +6,8 @@ import com.google.maps.android.clustering.ClusterItem;
 class PhotoMarker implements ClusterItem {
     private final LatLng mPosition;
 
-    public PhotoMarker(double lat, double lng) {
-        mPosition = new LatLng(lat, lng);
+    public PhotoMarker(LatLng position) {
+        mPosition = position;
     }
 
     public LatLng getPosition() {
