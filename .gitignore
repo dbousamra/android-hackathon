@@ -5,3 +5,8 @@ local.properties
 bin/
 project.properties
 *.iml
+google-maps-utils/bin/*
+google-maps-utils/gen/*
+.classpath
+.project
+lint.xml
