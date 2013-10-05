@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.example.androidhackathon.R;
 
 public class AndroidHackathonActivity extends Activity {
     private GoogleMap mMap;
