@@ -1,6 +1,7 @@
 package com.example.androidhackathon;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
@@ -19,6 +20,8 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.androidhackathon.R;
+
+import java.util.List;
 
 public class AndroidHackathonActivity extends Activity implements
         GooglePlayServicesClient.ConnectionCallbacks,
